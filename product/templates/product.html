@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>테스트 페이지</title>
+</head>
+<body>
+{% comment %} <form method="POST"> {% endcomment %}
+    {% comment %} {% csrf_token %/} {% endcomment %}
+{% comment %} 
+    <select name="category">
+        <input name="name">
+        <input name="nutrition">
+        <input name="allergy"> {% endcomment %}
+        {% comment %} {% for category in categories %}
+        <option value="{{ category.name }}">{{ category.name }}</option>
+        {% endfor %} {% endcomment %}
+
+<ul>
+    {% for drink in product %}
+    <li>{{ drink.menu }}</li>
+    {% endfor %}
+</ul>
+    {% comment %} </select>
+</form> {% endcomment %}
+</body>
+</html>
