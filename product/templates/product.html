@@ -2,26 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>테스트 페이지</title>
+    <title>스타벅스</title>
+    <style>
+        li {
+            list-style:none;
+        }
+    </style>
 </head>
 <body>
-{% comment %} <form method="POST"> {% endcomment %}
-    {% comment %} {% csrf_token %/} {% endcomment %}
-{% comment %} 
-    <select name="category">
-        <input name="name">
-        <input name="nutrition">
-        <input name="allergy"> {% endcomment %}
-        {% comment %} {% for category in categories %}
-        <option value="{{ category.name }}">{{ category.name }}</option>
-        {% endfor %} {% endcomment %}
 
-<ul>
-    {% for drink in product %}
-    <li>{{ drink.menu }}</li>
-    {% endfor %}
-</ul>
-    {% comment %} </select>
-</form> {% endcomment %}
+        {% for category in categories %}
+            <a href="/{{ category.id }}">
+                <li>
+                    {{ category.image }}
+                    {{ category.name }}
+                </li>
+            </a>
+        {% endfor %}
+
+<hr>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
+
+
+
+{% comment %} <form method="POST" action="/search/" name="content"> 
+    {% csrf_token %}
+        
+            <input type="checkbox" value="ColdBrew">
+            <label for="ColdBrew">콜드브루</label>
+        
+            <input type="checkbox" value="Espresso">
+            <label for="Espresso">에스프레소</label>
+       
+            <input type="checkbox" value="teavana">
+            <label for="teavana">티바나</label>
+
+            
+            <button type="submit">음료 검색</button>
+    </form>
+
+ {% endcomment %}

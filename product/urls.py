@@ -2,8 +2,9 @@ from django.urls import path
 from . import views
 
 
-
+app_name = 'product'
 urlpatterns = [
-    path('product/', views.drink, name='drink'), 
+    path('', views.drink, name='drink'), 
+    path('<int:id>', views.search, name='search'),
 
 ]
