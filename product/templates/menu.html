@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버전2</title>
+    <style>
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+
+    <form method="POST">
+        {% csrf_token %}
+            <input type='checkbox' name="coldbrew" value="1">콜드 브루 커피
+            <input type='checkbox' name="brewed" value="2">브루드 커피
+            <input type='checkbox' name="espresso" value="3">에스프레소
+            <input type='checkbox' name="blended" value="4">블렌디드
+            <button type='submit'>OK</button> 
+    </form>
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html> 

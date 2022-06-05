@@ -1,0 +1,12 @@
+{% extends 'product.html' %}
+
+{% comment %} 버전 11111111111111 {% endcomment %}
+
+
+{% block content %}
+
+    {% for drink in drinks %}
+        <li>{{ drink.name }}</li>
+    {% endfor %}
+
+{% endblock %} 

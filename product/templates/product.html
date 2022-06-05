@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>스타벅스</title>
+    <title>버전1</title>
     <style>
         li {
             list-style:none;
@@ -11,37 +11,19 @@
 </head>
 <body>
 
-        {% for category in categories %}
-            <a href="/{{ category.id }}">
-                <li>
-                    {{ category.image }}
-                    {{ category.name }}
-                </li>
-            </a>
-        {% endfor %}
+    {% for category in categories %}
+        <a href="/{{ category.id }}">
+            <li>
+                {{ category.image }}
+                {{ category.name }}
+            </li>
+        </a>
+    {% endfor %}
 
 <hr>
+
     {% block content %}
     {% endblock %}
+    
 </body>
 </html>
-
-
-
-{% comment %} <form method="POST" action="/search/" name="content"> 
-    {% csrf_token %}
-        
-            <input type="checkbox" value="ColdBrew">
-            <label for="ColdBrew">콜드브루</label>
-        
-            <input type="checkbox" value="Espresso">
-            <label for="Espresso">에스프레소</label>
-       
-            <input type="checkbox" value="teavana">
-            <label for="teavana">티바나</label>
-
-            
-            <button type="submit">음료 검색</button>
-    </form>
-
- {% endcomment %}

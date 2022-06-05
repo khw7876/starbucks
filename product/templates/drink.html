@@ -1,11 +1,39 @@
-{% extends 'product.html' %}
+{% extends 'menu.html' %}
 
+{% comment %} 버전 2222222222222 {% endcomment %}
+
+
+{% block style %}
+    .image {
+        width: 258px;
+    }
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap : 20px;
+        margin: 50px 100px auto 100px;
+    }
+    .name {
+        text-align: center;
+    }
+{% endblock %}
 
 
 {% block content %}
 
-    {% for drink in drinks %}
-        <li>{{ drink.name }}</li>
+    {% if images %}
+    <div class="menu">
+    {% for image in images %}
+
+        <div class="drink-box">
+            <p><img class="image" src="{{image.url}}"></p>
+            <p class="name">{{image.name.name}}</p>
+            {% comment %} <p>{{image.name.nutrition}}</p>
+            <p>{{image.name.allergy}}</p> {% endcomment %}
+        </div>
+
     {% endfor %}
+    </div>
+    {% endif %}
 
 {% endblock %}
