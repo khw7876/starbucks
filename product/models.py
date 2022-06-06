@@ -21,11 +21,11 @@ class Drink(models.Model):
     
     
 class Image(models.Model):
-    name = models.ForeignKey('Drink', on_delete=models.CASCADE)
+    drink = models.ForeignKey('Drink', on_delete=models.CASCADE)
     url = models.URLField(max_length=256)
     
     def __str__(self):
-        return str(self.name)
+        return str(self.drink)
     
 
     
